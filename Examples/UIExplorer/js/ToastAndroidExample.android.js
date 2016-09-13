@@ -27,6 +27,7 @@ var React = require('react');
 var ReactNative = require('react-native');
 var {
   StyleSheet,
+  View,
   Text,
   ToastAndroid,
   TouchableWithoutFeedback,
@@ -47,14 +48,14 @@ class ToastExample extends React.Component {
           <TouchableWithoutFeedback
             onPress={() =>
               ToastAndroid.show('This is a toast with short duration', ToastAndroid.SHORT)}>
-            <Text style={styles.text}>Click me.</Text>
+            <View><Text style={styles.text}>Click me.</Text></View>
           </TouchableWithoutFeedback>
         </UIExplorerBlock>
         <UIExplorerBlock title="Toast with long duration">
           <TouchableWithoutFeedback
             onPress={() =>
               ToastAndroid.show('This is a toast with long duration', ToastAndroid.LONG)}>
-            <Text style={styles.text}>Click me.</Text>
+            <View><Text style={styles.text}>Click me.</Text></View>
           </TouchableWithoutFeedback>
         </UIExplorerBlock>
         <UIExplorerBlock title="Toast with top gravity">
@@ -66,7 +67,7 @@ class ToastExample extends React.Component {
                 ToastAndroid.TOP,
               )
             }>
-            <Text style={styles.text}>Click me.</Text>
+            <View><Text style={styles.text}>Click me.</Text></View>
           </TouchableWithoutFeedback>
         </UIExplorerBlock>
         <UIExplorerBlock title="Toast with center gravity">
@@ -78,7 +79,7 @@ class ToastExample extends React.Component {
                 ToastAndroid.CENTER,
               )
             }>
-            <Text style={styles.text}>Click me.</Text>
+            <View><Text style={styles.text}>Click me.</Text></View>
           </TouchableWithoutFeedback>
         </UIExplorerBlock>
         <UIExplorerBlock title="Toast with bottom gravity">
@@ -90,7 +91,7 @@ class ToastExample extends React.Component {
                 ToastAndroid.BOTTOM,
               )
             }>
-            <Text style={styles.text}>Click me.</Text>
+            <View><Text style={styles.text}>Click me.</Text></View>
           </TouchableWithoutFeedback>
         </UIExplorerBlock>
       </UIExplorerPage>

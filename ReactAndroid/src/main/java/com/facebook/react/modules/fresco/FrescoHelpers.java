@@ -12,6 +12,7 @@ package com.facebook.react.modules.fresco;
 import android.content.Context;
 import android.support.annotation.Nullable;
 
+import com.facebook.common.logging.FLog;
 import com.facebook.common.soloader.SoLoaderShim;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.backends.okhttp3.OkHttpImagePipelineConfigFactory;
@@ -19,6 +20,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.core.ImagePipelineFactory;
 import com.facebook.imagepipeline.listener.RequestListener;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.common.ReactConstants;
 import com.facebook.react.modules.network.OkHttpClientProvider;
 import com.facebook.soloader.SoLoader;
 
@@ -53,6 +55,11 @@ public class FrescoHelpers {
       SoLoaderShim.setHandler(new FrescoHandler());
       Fresco.initialize(reactContext.getApplicationContext(), config);
       sHasBeenInitialized = true;
+    }
+    else if (config != null) {
+      FLog.w(ReactConstants.TAG,
+        "Fresco has already been initialized with a different config. "
+        + "The new Fresco configuration will be ignored!");
     }
   }
 

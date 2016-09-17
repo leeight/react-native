@@ -42,7 +42,7 @@ public class FrescoModule extends ReactContextBaseJavaModule implements
   /**
    * Create a new Fresco module with a given ImagePipelineConfig.
    * This should only be called when the module has not been initialized yet.
-   * You can use {@link #FrescoHelpers.hasBeenInitialized()} to check this and call
+   * You can use {@link FrescoHelpers#hasBeenInitialized()} to check this and call
    * {@link #FrescoModule(ReactApplicationContext)} if it is already initialized.
    * Otherwise, the given Fresco configuration will be ignored.
    *

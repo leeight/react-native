@@ -86,7 +86,7 @@ public class ImageLoaderModule extends ReactContextBaseJavaModule implements
     }
 
     // Ensure FrescoHelpers.initialize was called.
-    this.initialize();
+    FrescoHelpers.initialize(getReactApplicationContext());
 
     Uri uri = Uri.parse(uriString);
     ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri).build();
@@ -150,7 +150,8 @@ public class ImageLoaderModule extends ReactContextBaseJavaModule implements
     }
 
     // Ensure FrescoHelpers.initialize was called.
-    this.initialize();
+    // TODO(xxx) find out why ImageLoader.prefetchImage can be called before ImageLoader.initialize
+    FrescoHelpers.initialize(getReactApplicationContext());
 
     Uri uri = Uri.parse(uriString);
     ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri).build();
